@@ -1,0 +1,25 @@
+
+<%= form_for @job do |f| %>
+
+<%= f.label :title %>
+<%= f.text_field :title%>
+<%= f.label :post_date %>
+<%= f.date_field :post_date%>
+
+<%= f.label :description %>
+<%= f.text_field :description %>
+<%= f.label :level %>
+<%= f.text_field :level %>
+<%= f.label :company_type %>
+<%= f.text_field :company_type %>
+<%= f.label :salary %>
+<%= f.number_field :salary %>
+<%= f.label :job_type %>
+<%= f.text_field :job_type %>
+<%= f.label :city %>
+<%= f.text_field :city %>
+<%= f.label :close_date %>
+<%= f.date_field :close_date%>
+
+<%= f.submit %>
+<% end %>

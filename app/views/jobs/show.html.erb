@@ -1,0 +1,21 @@
+
+<h1><%= @job.title %></h1>
+
+<ul>
+
+  <li>Description: <%= @job.description %></li>
+  <li>Post Date: <%= @job.post_date %></li>
+  <li>Level:<%= @job.level %></li>
+  <li>Type of Company: <%= @job.company_type %></li>
+  <li>Salary: <%= @job.salary %></li>
+  <li>Duration: <%= @job.job_type %></li>
+  <li>City: <%= @job.city %></li>
+  <li>Closing Date: <%= @job.close_date %></li>
+</ul>
+
+<div >
+  <%# <% if @current_user.employer? %> %>
+  <%= link_to 'Edit Job', edit_job_path(@job.id) %>
+  <%= link_to 'Delete Job', job_path(@job.id), :method => 'delete', :data => {:confirm => 'Are you sure?'} %>
+  <%# <% end %> %>
+  </div>
