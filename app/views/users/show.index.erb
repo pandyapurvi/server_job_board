@@ -1,0 +1,24 @@
+
+<h1><%= @user.name %></h1>
+
+<ul>
+
+  <li>Email: <%= @user.email %></li>
+  <li>Contact Number: <%= @user.phone %></li>
+  <li>Website:<%= @user.website %></li>
+  <li>Resume: <%= @user.resume %></li>
+  <li>Require Notice Period: <%= @user.notice_period %></li>
+  <li>Total Experience: <%= @user.experience %></li>
+  <li>Current Title: <%= @user.current_title %></li>
+  <li>Size of the Company: <%= @user.company_size %></li>
+  <li>Type of Company: <%= @user.company_type %></li>
+  <li>Description: <%= @user.description %></li>
+  <li>ABN <%= @user.ABN %></li>
+</ul>
+
+<div >
+  <%# <% if @current_user.employer? %> %>
+  <%= link_to 'Edit', edit_user_path(@user.id) %>
+  <%= link_to 'Delete', user_path(@user.id), :method => 'delete', :data => {:confirm => 'Are you sure?'} %>
+  <%# <% end %> %>
+  </div>
