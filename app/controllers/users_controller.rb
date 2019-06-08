@@ -23,10 +23,10 @@ class UsersController < ApplicationController
     #logger.info user_params
     user = User.new(email: params[:email], password: params[:password], password_confirmation: params[:password_confirmation])
     # user.update(:employer => false)
-    user.update(:name => params[:name], :phone => params[:phone], :website => params[:website], :resume => params[:resume], :notice_period => params[:notice_period], :experience => params[:experience], :current_title => params[:current_title])
+    user.update(:name => params[:name], :phone => params[:phone], :website => params[:website], :resume => params[:resume], :notice_period => params[:notice_period], :experience => params[:experience], :current_title => params[:current_title], :employer=> params[:employer], :company_size => params[:company_size], :company_type => params[:company_type], :description => params[:description], :ABN => params[:ABN], :image => params[:image])
 
     if user.save
-      render json: {status: 'User created successfully', user_id: user.id, employer: user.employer, name: user.name, email: user.email, phone:user.phone, website:user.website, resume:user.resume, notice_period:user.notice_period, experience:user.experience, current_title:user.current_title}, status: :created
+      render json: {status: 'User created successfully', user_id: user.id, employer: user.employer, name: user.name, email: user.email, phone:user.phone, website:user.website, resume:user.resume, notice_period:user.notice_period, experience:user.experience, current_title:user.current_title, company_size:user.company_size, company_type:user.company_type, description:user.description, ABN:user.ABN, image:user.image}, status: :created
     else
       render json: { errors: user.errors.full_messages }, status: :bad_request
     end
